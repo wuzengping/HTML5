@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fly 翼</title>
+  <style type="text/css">
+      header{
+          border: 1px  solid  #181818;
+          width: 1320px;
+          height: 40px;
+          background-color: #181818;
+          position: relative;
+      }
+      strong{
+          color: white;
+          position: relative;
+          left: 10px;
+          top: 9px;
+          text-align:left;
+      }
+
+
+
+      section{
+          border: 1px  solid  ;
+          width: 1320px;
+          height: 330px;
+          background-color: #efefda;
+      }
+      img{
+          display: inline-block;
+      }
+
+      .a{
+          position:relative;
+          left:500px;
+          top: -1px;
+
+      }
+      .b{
+          position:relative;
+          left:-170px;
+          top: -1px;
+      }
+      .c{
+          position:relative;
+          left:150px;
+          top: -1px;
+      }
+      /*a:hover{*/
+
+      /*transform: translateX(1200px);*/
+
+      /*transition: all 2s linear ;*/
+      /*}*/
+      @keyframes diyi {
+          25%{
+              transform:translate(0px);
+          }
+          50%{
+              transform:translate(0px);
+          }
+
+          75%{
+              transform:translate(0px);
+          }
+          100%{
+              transform:translate(1300px);
+          }
+      }
+      @keyframes dier {
+          25%{
+              transform:translate(0px);
+          }
+          50%{
+              transform:translate(0px);
+          }
+          65%{
+              transform: translate(0px);
+          }
+          75%{
+              transform:translate(0px);
+          }
+          100%{
+              transform:translate(1300px);
+          }
+      }
+      @keyframes disan {
+          25%{
+              transform:translate(0px);
+          }
+          45%{
+              transform:translate(0px);
+          }
+          50%{
+              transform:translate(0px);
+          }
+          60%{
+              transform:translate(0px);
+          }
+          75%{
+              transform:translate(0px);
+          }
+          100%{
+              transform:translate(1300px);
+          }
+      }
+      .b{
+          z-index: 2;
+          animation:dier 7s  infinite ;
+      }
+      .a{
+          z-index: 1;
+          animation:diyi 5s  infinite  ;
+      }
+
+      .c{
+          z-index: 3;
+          animation:disan 9s  infinite  ;
+      }
+
+
+      article{
+          border: 1px solid white ;
+          width: 1230px;
+          height: 550px;
+          position:relative;
+          left: 40px;
+          top: 0px;
+          background-color: #fbfbea;
+      }
+
+      li{
+          text-indent: 4em;
+          height: 40px;
+          border:1px solid white;
+          background-color: white;
+          display: inline-block;
+          position: relative;
+          left:-5px ;
+          top: 0px;
+
+      }
+      span{
+          position: relative;
+          left:-30px ;
+          top: 13px;
+      }
+      a{
+
+          text-decoration: none;
+          color: black;
+          text-align: center;
+      }
+
+      li:hover {
+
+          background-color: rgb(241, 241, 241);
+      }
+      a:hover{
+          color: green;
+
+      }
+      .w{
+          position: relative;
+          left:-165px;
+          top: 35px;
+      }
+      .ww{
+          position: relative;
+          left:-260px;
+          top: 60px;
+          color: rgb(196,196,196);
+      }
+      .gg{
+          position: relative;
+          left:200px;
+          top: -182px;
+          color: rgb(196,196,196);
+      }
+      .g{
+          position: relative;
+          left :70px;
+          top: -147px;
+
+      }
+      .k{
+          position: relative;
+          left :2px;
+          top: -120px;
+      }
+      .kk{
+          position: relative;
+          left :-110px;
+          top: -85px;
+      }
+      .kkk{
+          display: block;
+          position: relative;
+          left :155px;
+          top: 10px;
+          color: rgb(196,196,196) ;
+      }
+      .q{
+
+          position: relative;
+          left :-85px;
+          top: 25px;
+          color: rgb(196,196,196) ;
+      }
+      .h{
+          position: relative;
+          left :200px;
+          top: -318px;
+
+      }
+      .hh{
+          position: relative;
+          left :90px;
+          top: -280px;
+
+      }
+      .hhh{
+          position: relative;
+          left :-80px;
+          top: 25px;
+          color: rgb(196,196,196) ;
+      }
+      .z{
+          position: relative;
+          left :70px;
+          top: -560px;
+      }
+
+      .zz{
+          position: relative;
+          left :-90px;
+          top: -525px;
+      }
+      .zzz{
+          position: relative;
+          left :-100px;
+          top: 25px;
+          color: rgb(196,196,196) ;
+      }.l{
+           position: relative;
+           left :-310px;
+           top: -320px;
+       }
+      .ll{
+          position: relative;
+          left :-470px;
+          top: -280px;
+      }
+      .lll{
+          position: relative;
+          left :-90px;
+          top:25px;
+          color: rgb(196,196,196);
+      }
+      .v{
+          position: relative;
+          left :-450px;
+          top:-560px;
+
+      }
+      .vv{
+          position: relative;
+          left :-575px;
+          top:-525px;
+
+
+      }
+      .vvv{
+          position: relative;
+          left :580px;
+          top:-665px;
+          color: rgb(196,196,196) ;
+
+      }
+      .fg{
+          position: relative;
+          left :494px;
+          top:-483px;
+      }
+      .fgg{
+          position: relative;
+          left :380px;
+          top:-443px;
+      }
+      .fggg{
+          position: relative;
+          left :300px;
+          top:-420px;
+          color: rgb(196,196,196) ;
+
+      }
+      .su{
+          position: relative;
+          left :348px;
+          top:-724px;
+      }
+      .sun{
+          position: relative;
+          left :230px;
+          top:-688px;
+      }
+      .sung{
+          position: relative;
+          left :158px;
+          top:-665px;
+          color: rgb(196,196,196) ;
+      }
+      .ru{
+          position: relative;
+          left :239px;
+          top:-724px;
+      }
+      .run{
+          position: relative;
+          left :100px;
+          top:-688px;
+      }
+      .rung{
+          position: relative;
+          left :10px;
+          top:-665px;
+          color: rgb(196,196,196) ;
+      }
+      .fl{
+          position: relative;
+          left :1000px;
+          top:-645px;
+      }
+      .fly{
+          position: relative;
+          left :870px;
+          top:-609px;
+      }
+      .flyg{
+          position: relative;
+          left :765px;
+          top:-585px;
+          color: rgb(196,196,196) ;
+      }
+      .ka{
+          position: relative;
+          left :440px;
+          top:-645px;
+      }
+      .kanzhe{
+          position: relative;
+          left :310px;
+          top:-608px;
+      }
+      .kanzheni{
+          position: relative;
+          left :230px;
+          top:-584px;
+          color: rgb(196,196,196) ;
+      }
+
+  </style>
+</head>
+<body>
+<header>
+<strong> Fly 翼</strong>
+</header>
+<section>
+ <img class="a" src="../webbisai/i/oumei.jpg"width=334px height="330"/>
+    <img class="b"src="../webbisai/i/吉他.jpg" width=334px height="330">
+    <img class="c" src="../webbisai/i/sleep.jpg" width=334px height="330"/>
+
+</section>
+
+<article>
+    <ul>
+        <li><a href="流行音乐.HTML"><span>流行</span></a></li>
+        <li><a href=""><span>轻音乐</span></a></li>
+        <li><a href=""><span>安静</span></a></li>
+        <li><a href=""><span>民谣</span></a></li>
+        <li><a href=""><span>情歌</span></a></li>
+        <li><a href=""><span>乐器</span></a></li>
+        <li><a href=""><span>90年代</span></a></li>
+        <li><a href=""><span>城市</span></a></li>
+        <li><a href=""><span>寂寞</span></a></li>
+        <li><a href=""><span>全部分类</span></a></li>
+    </ul>
+    <p>
+       <a href="../webbisai/眼神.html" targht=""> <img src="../webbisai/i/XKL)TI(%5DR8LVMFQ$UY%7DG3AO.jpg"alt="梦"title="梦"height="162px"width="160px"/>
+        <span class="w">眼神蕴含柔情，似水
+            </span> <strong class="ww">刘-大大</strong></a>
+    </p>
+        <p>
+        <a href="../webbisai/背影.html"> <img  class="gg" src="../webbisai/i/纯.jpg" alt="背影"title="天空的飞鸟,代表我的点滴烦恼"width="162px"height="160px"/><span class="g">自然的声音<strong class="q">遗忘的音乐</strong></span></a>
+    </p>
+    <p>
+        <a href="../webbisai/菠萝.html"><img class="k" src="../webbisai/i/满人.jpg"
+                        alt="一首一个"title="一首歌，就是能让人沣"        width="162px"height="160px"/> <span class="kk">疯狂打call <strong class="kkk">Fly翼 音乐推荐</strong></span>
+       </a>
+    </p>
+
+
+        <a href="../webbisai/手.html"><img class="h" src="../webbisai/i/爱.jpg" alt="手"title="手的纠结，歌不会纠结。"
+                        width="162px"height="160px"/> <span class="hh">如歌般 <strong class="hhh">Fly翼 红人推荐</strong></span>
+        </a>
+    <a href=""><img class="z" src="../webbisai/i/99.jpg" alt="一个人"title="一个人的聆听"
+                    width="162px"height="160px"/> <span class="zz">民谣一个个故事，等你 <strong class="zzz">民谣吧</strong></span>
+    </a>
+    <a href=""><img class="l" src="../webbisai/i/那时候的歌.jpg" alt="以前"title="听那时候的歌"
+                    width="162px"height="160px"/> <span class="ll">以前的，这有 <span class="lll">80后老人</span></span>
+    </a>
+
+    <a href=""><img class="v" src="../webbisai/i/含羞.jpg" alt="光影"title="静下来"
+                    width="162px"height="160px"/> <span class="vv">时过境迁</span>
+        <strong class="vvv">小姑娘</strong>
+    </a>
+
+    <a href=""><img class="fg" src="../webbisai/i/becaue.jpg" alt="欧美那些歌儿"title="欧 不一样"
+                    width="162px"height="160px"/> <span class="fgg">欧美音乐 </span>
+        <strong class="fggg">Amazing music</strong>
+    </a>
+    <a href=""><img class="su" src="../webbisai/i/青春.jpg" alt="青春"title="青春派"
+                    width="162px"height="160px"/> <span class="sun">关于青春 </span>
+        <strong class="sung">The years!</strong>
+    </a>
+
+    <a href=""><img class="ru" src="../webbisai/i/LP_LT%7D%60RHC12LS4X%7B%5D2$LXJ.jpg" alt="下雨时"title="雨伞"
+                    width="162px"height="160px"/> <span class="run">下雨天，歌 雨 </span>
+        <strong class="rung">Happy or not</strong>
+    </a>
+
+    <a href=""><img class="fl" src="../webbisai/i/黑夜.jpg" alt="黑夜"title="孤单单的日子里"
+                    width="162px"height="160px"/> <span class="fly">孤单 有歌陪你</span>
+        <strong class="flyg">Happy alone</strong>
+    </a>
+    <a href=""><img class="ka" src="../webbisai/i/看着你.jpg" alt="在看你"title="我在看你"
+                    width="162px"height="160px"/> <span class="kanzhe"> 听歌的模样</span>
+        <strong class="kanzheni">远走的鸟</strong>
+    </a>
+</article>
+<footer>
+
+</footer>
+</body>
+</html>
