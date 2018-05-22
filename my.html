@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>时钟特效</title>
+</head>
+<style>
+    .p{
+        font-size: 100px;
+        color: #0000a8;
+        margin: 206px;
+        padding: inherit;
+        position: absolute;
+        top: -132px;
+        left: 126px;
+    }
+</style>
+<div id="myclock"class="p"></div>
+<script>
+    function desttime(){
+        var  today=new Date();
+        var  year=today.getYear();
+        var  month=today.getMonth();
+        var day=today.getDay();
+        var  hour=today.getHours();
+        var  minute=today.getMinutes();
+        var ss=today.getSeconds();
+        document.getElementById("myclock").innerText="现在是："+hour+":"+minute+":"+ss+"";
+    }
+   setInterval('desttime()',1000);
+    //setTimeout('desttime()',1000);
+
+
+    var ren=window.confirm("确认删除吗？");
+    if(ren){
+        alert(document.getElementById("yu").innerHTML);
+
+    }else{
+        alert("删除失败！")
+    }
+</script>
+<body>
+<button id="yu">开关</button>
+</body>
+</html>
