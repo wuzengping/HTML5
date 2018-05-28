@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>完善当当购物车页面</title>
+    <link type="text/css" rel="stylesheet" href="css/cartStyle.css" />
+</head>
+<body>
+
+<div class="content">
+    <div class="logo">
+        <img src="images/dd_logo.jpg"><span>关闭</span>
+    </div>
+    <div class="cartList">
+        <ul>
+            <li>¥<input type="text" name="price" value="21.90"></li>
+            <li><input   onclick="po()" type="button" name="minus" value="-"><input type="text" name="amount" value="1"><input onclick="plus1()"     type="button" name="plus" value="+"></li>
+            <li id="price0">¥21.90</li>
+            <li><p>移入收藏</p><p>删除</p></li>
+        </ul>
+        <ul>
+            <li>¥<input type="text" name="price" value="24.00"></li>
+            <li><input onclick="jia002()"  type="button" name="minus" value="-"><input type="text" name="amount" value="1"><input onclick="plus02()"  type="button" name="plus" value="+"></li>
+            <li id="price1">¥24.00</li>
+            <li><p>移入收藏</p><p>删除</p></li>
+        </ul>
+        <ol>
+            <li id="totalPrice">&nbsp;</li><li><span onclick="io1()">结 算</span></li>
+        </ol>
+    </div>
+</div>
+<script>
+    function plus1(){
+
+       var count=document.getElementsByName("amount")
+     var i=parseInt(count[0].value);
+        if(i<99){
+            count[0].value=i+1;
+        }
+        document.getElementById("price0").innerHTML="￥"+parseInt((count[0].value)*21.9);
+        io();
+    }
+    function  po() {
+        var cou = document.getElementsByName("amount");
+
+        var i = parseInt(cou[0].value);
+
+        if (i > 0) {
+            cou[0].value = i - 1;
+        }else{
+            alert("不能再减了");}
+        document.getElementById("price0").innerHTML = "￥" + parseInt((cou[0].value) * 21.9);
+        io();
+
+    }
+
+
+
+
+
+
+
+        function  plus02() {
+
+            var count = document.getElementsByName("amount")
+            var i = parseInt(count[1].value);
+            if (i < 99) {
+                count[1].value = i + 1;
+            }
+            document.getElementById("price1").innerHTML = "￥" + parseInt((count[1].value) * 24);
+            io();
+
+        }
+
+    function  jia002(){
+        var cou = document.getElementsByName("amount");
+
+        var i = parseInt(cou[1].value);
+
+        if (i > 0) {
+            cou[1].value = i - 1;
+        }else{
+            alert("不能再减了");
+
+
+        }
+
+        document.getElementById("price1").innerHTML = "￥" + parseInt((cou[1].value) * 24);
+        io();
+    }
+   function  io(){
+       var count = document.getElementsByName("amount")
+
+    var u= parseInt((count[1].value) * 24);
+    var u2= parseInt((count[0].value) * 21.9);
+
+
+
+       document.getElementById("totalPrice").innerHTML = "￥"+(u+u2);
+
+   }
+    function  io1(){
+        var count = document.getElementsByName("amount")
+
+        var u= parseInt((count[1].value) * 24);
+        var u2= parseInt((count[0].value) * 21.9);
+
+
+
+        document.getElementById("totalPrice").innerHTML = "￥"+(u+u2);
+
+    var a =document.getElementById("totalPrice").nextSibling;
+
+        alert(a);
+
+
+    }
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
