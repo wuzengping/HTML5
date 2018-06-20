@@ -1,0 +1,2122 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>first</title>
+    <script src="../first/js/modernizr.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" /><!--CSS RESET-->
+    <link rel="stylesheet" type="text/css" href="../css/demo.css"><!--演示页面样式，使用时可以不引用-->
+
+    <link rel="icon" href="../images/flylogo.icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/flylogo.icon" type="image/x-icon" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            background-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Raleway, sans-serif;
+            line-height: 1.7;
+            perspective-origin: 0% 50%;
+            -webkit-perspective-origin: 0% 50%;
+
+            -webkit-perspective: 800px;
+            -Trident-perspective-origin: 0% 50%;
+
+            -Trident-perspective: 800px;
+            perspective: 800px;
+            background: black;
+
+        }
+
+        nav,
+        main {
+            transition: -Trident-transform 150ms ease-out;
+            transition: -webkit-transform 150ms ease-out;
+            transition: transform 150ms ease-out;
+            transition: transform 150ms ease-out, -webkit-transform 150ms ease-out;
+
+
+            height: 5000px;
+            width: 1335px;
+        }
+
+        nav {
+            z-index: 100;
+            position:fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 16em;
+
+            -webkit-transform: translateX(-16em);
+            -Trident-transform: translateX(-16em);
+            transform: translateX(-16em);
+            background: url("../image/背景图片.jpg") no-repeat;
+        }
+        nav.menu-active {
+            -webkit-transform: translateX(0);
+            -Trident-transform: translateX(0);
+            transform: translateX(0);
+        }
+        nav.menu-hover {
+            -webkit-transform: translateX(-15em);
+            -Trident-transform: translateX(-15em);
+            transform: translateX(-15em);
+        }
+        nav h1 {
+            z-index: 100;
+            display: block;
+
+            right: -60px;
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            font-size: .8em;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #9DC6D1;
+            text-transform: uppercase;
+            text-align: center;
+
+            position:fixed;
+            top: 0px;
+            left: 248px;
+            cursor: pointer;
+            background-image: url("../image/QQ截图20180611101119.png");
+            background-repeat: no-repeat;
+
+        }
+        nav h1:hover {
+
+        }
+        nav ul {
+
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block;
+            padding: 0 1em;
+            width: 100%;
+            height: 60px;
+            color: #9DC6D1;
+            line-height: 60px;
+            background-color: rgb(105,95,86);
+
+        }
+nav li:nth-of-type(2n){
+    background-color: rgb(235,238,243);
+}
+        nav li:nth-of-type(6){
+            background-image: url("../image/QQ截图20180611104913.png");
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        nav li:nth-of-type(1){
+            background-image: url("../image/QQ截图20180611101240.png");
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        nav li:nth-of-type(2){
+            background-image: url("../image/QQ截图20180611103651.png");
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        nav li:nth-of-type(3){
+            background-image: url("../image/QQ截图20180611101312.png");
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        nav li:nth-of-type(4){
+            background-image: url("../image/QQ截图20180611103951.png");
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        nav li:nth-of-type(5){
+            background-image: url("../image/QQ截图20180611101340.png");
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        nav li:hover {
+            font-size: large;
+            font-style: italic;
+        }
+
+        main {
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            left: 0px;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: white;
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+        }
+        main:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(33, 33, 45, 0.5));
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 150ms ease-out, visibility 0s 150ms;
+        }
+        main.menu-active {
+            border-radius: .001px;
+            -webkit-transform: translateX(16em) rotateY(15deg);
+            transform: translateX(16em) rotateY(15deg);
+        }
+        main.menu-active:after {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 150ms ease-out, visibility 0s;
+        }
+        main.menu-hover {
+            border-radius: .001px;
+            -webkit-transform: translateX(1em) rotateY(1deg);
+            transform: translateX(1em) rotateY(1deg);
+        }
+       a{
+           font-size: 20px;
+           font-weight: bold;
+          position: absolute;
+           left: 222px;
+       }
+     b{
+         position: absolute;
+         left: 51px;
+     }
+      .input1{
+          position: absolute;
+          left: 150px;
+          top: 14px;
+          width: 761px;
+          height: 50px;
+          border-radius: 200px;
+          border-width: thin;
+          font-size: 20px;
+          font-weight: 100;
+          border-color: darkgray;
+          opacity: 0.8;
+          color: black;
+
+          background-image: url("../image/QQ截图20180611150538.png");
+          background-repeat: no-repeat;
+          background-position: right;
+      }
+  .div1{
+      width: 1380px;
+      height: 450px;
+
+      display: block;
+      position: absolute;
+      top: -2px;
+      left: 1px;
+      z-index: 1;
+background: url("../轮播图/number0.jpg") no-repeat  ;
+      -o-background-size: auto;
+
+  }
+
+        .arrowLeft{
+             position: absolute;
+             width: 30px;
+             background:rgba(0,0,0,0.5);
+             height: 50px;
+             line-height: 50px;
+             text-align: center;
+             top:200px;
+             z-index: 150;
+             font-family: "微软雅黑";
+             font-size: 28px;
+             font-weight: bold;
+             cursor: pointer;
+             display: block;
+         }
+        .arrowLeft{left: 10px;}
+        .arrowRight{left: 1250px;
+            position: absolute;
+            width: 30px;
+            background:rgba(0,0,0,0.5);
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            top:200px;
+            z-index: 150;
+            font-family: "微软雅黑";
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;}
+
+
+
+    .ul2>li{
+        display: inline-block; font-size: 10px; line-height: 20px; font-family: "微软雅黑"; margin: 0 1px; width: 20px; height: 20px; border-radius: 50%; background: #333333; text-align: center; color: #ffffff;
+    }
+    .ul2,li{
+        padding: 0;margin: 0; list-style: none;
+    }
+    .ul2{
+        position: absolute; bottom:10px; z-index: 100; width: 100%; text-align: center;
+    }
+        .ul2  li:nth-of-type(1){
+            background: orange;
+        }
+        .ul3  li:nth-of-type(1){
+            color: orange;
+        }
+
+        .ul3{
+            position: absolute;
+            left: 836px;
+            bottom: -16px;
+            line-height: 46px;
+            background-color: rgb(162,155,132);
+            opacity: 0.6;
+        }
+    .ul4{
+        z-index: 100;
+        position: absolute;
+        top: 44px;
+        left: 264px;
+        background-color: rgb(162,155,132);
+        opacity: 0.6;
+        width: 484px;
+        display: none;
+    }
+
+        .ul5{
+            list-style: none;
+            height: 4000px;
+            position: absolute;
+            top: 441px;
+            left: -40px;
+
+        }
+       .ul5>li{
+        border:solid 1px red;
+            width: 1280px;
+           height: 580px;
+        }
+       .ul5>li:nth-of-type(1){
+           width: 1350px;
+           height: 780px;
+           border-color: white;
+       }
+        .ul5>li:nth-of-type(2){
+            width: 1350px;
+            height: 880px;
+            border-color: white;
+        }
+        .ul5>li:nth-of-type(3){
+            width: 1350px;
+            height: 630px;
+            border-color: white;
+        }
+
+
+        .ul5>li:nth-of-type(5){
+            width: 1335px;
+            height: 680px;
+            border-color: white;
+
+        }
+        .ul5>li:nth-of-type(6){
+            width: 1335px;
+            height: 280px;
+            border-color: white;
+            background-color: rgb(73,74,95);
+        }
+        .ul5>li:nth-of-type(4){
+
+            width: 1350px;
+            height: 650px;
+border-color: white;
+
+        }
+       .div2,html{
+           height: 100%;
+       }
+   #h5{
+       position: absolute;
+       top: 2880px;
+     left:74px ;
+       font-size:52px ;
+       color: #b55a00;
+       font-family: Arial;
+   }
+.dl1{
+
+    position: absolute;
+    text-align: left;
+    top: 2940px;
+    left: 1102px;
+    line-height: 75px;
+    color: bisque;
+    opacity: 0.95;
+    width: 210px;
+    height: 639px;
+
+
+
+}
+        dd:hover{
+            color: orange;
+            transform: scale(1.1);
+        }
+     .ul6>li{
+         display: inline;
+     }
+        .ul6-dian>li{
+            display: inline;
+        }
+        .ul7>li{
+            display: inline-block;
+
+        }
+        .ul7-dian>li{
+            display: inline-block;
+
+        }
+        .ul8>li{
+              display: inline-block;
+
+          }
+        .ul8-dian>li{
+            display: inline-block;
+
+        }
+        .ul9>li{
+            display: inline-block;
+
+        }
+        .ul9-dian>li{
+            display: inline-block;
+
+        }
+        .div3{
+
+            width: 202px;
+            height: 339px;
+            display: inline-block;
+            position: absolute;
+            top: 72px;
+            left: 1168px;
+            background-color: rgb(248,248,248);
+
+
+        }
+        .div3-dianshiju{
+
+            width: 198px;
+            height: 273px;
+            display: inline-block;
+            position: absolute;
+            top: 2360px;
+            left: 1127px;
+            background-color: rgb(248,248,248);
+
+
+        }
+        .div3>ul>li{
+            line-height: 27px;
+            font-size: 10px;
+        }
+        .div3-dianshiju>ul>li{
+            line-height: 27px;
+            font-size: 10px;
+        }
+        .div3>ul>li:hover{
+            color: rgb(0,190,6);
+        }
+        .div3-dianshiju>ul>li:hover{
+            color: rgb(0,190,6);
+        }
+        .div3>ul{
+            background: url("../精选/排行榜.png") no-repeat;
+            background-position:left;
+        }
+        .div3-dianshiju>ul{
+            background: url("../精选/排行榜.png") no-repeat;
+            background-position:left;
+        }
+        .div3-dianshiju>ul{
+            background: url("../精选/排行榜.png") no-repeat;
+            background-position:left;
+        }
+        .div3-dianshiju>ul{
+            background: url("../精选/排行榜.png") no-repeat;
+            background-position:left;
+        }
+        #im1{
+            position: absolute;
+            top: 2px;
+            right: 1px;
+        }
+        #im1-dian{
+            position: absolute;
+            top: 2px;
+            right: 1px;
+        }
+
+
+
+        .div-ul6{
+
+            width: 229px;
+              height: 350px;
+            position: absolute;
+            top: 61px;
+            left: 70px;
+            display: none;
+            background-color: white;
+
+        }
+        .div-ul6-dian{
+
+            width: 185px;
+            height: 295px;
+            position: absolute;
+            top: 2350px;
+            left: 70px;
+            display: none;
+            background-color: white;
+
+        }
+        .div-ul6 h5{
+            width: 229px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+            left: 0px;
+        }
+        .div-ul6-dian h5{
+            width: 229px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+            left: 0px;
+        }
+        .div-ul6 h6{
+              color: #b7bcb8;
+           }
+        .div-ul6-dian h6{
+            color: #b7bcb8;
+        }
+        .div-ul6 h5:hover{
+            color:rgb(0,190,6) ;
+        }
+        .div-ul6-dian h5:hover{
+            color:rgb(0,190,6) ;
+        }
+        .div-ul6 h5{
+            width: 229px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+        }
+        .div-ul6-dian h5{
+            width: 185px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+        }
+        .div-ul8{
+
+            width: 229px;
+            height: 350px;
+            position: absolute;
+            top: 410px;
+            left: 70px;
+            display: none;
+            background-color: white;
+
+        }
+        .div-ul8-dian{
+
+            width: 185px;
+            height: 295px;
+            position: absolute;
+            top: 2630px;
+            left: 70px;
+            display: none;
+            background-color: white;
+
+        }
+        .div-ul8 h5{
+            width: 229px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+            left: 0px;
+        }
+        .div-ul8-dian h5{
+            width: 185px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+            left: 0px;
+        }.div-ul8 h6{
+               color: #b7bcb8;
+           }
+        .div-ul8-dian h6{
+            color: #b7bcb8;
+        }
+        .div-ul8 h5:hover{
+            color:rgb(0,190,6) ;
+        }
+        .div-ul8-dian h5:hover{
+            color:rgb(0,190,6) ;
+        }
+        .div-ul8 h5{
+            width: 229px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+        }
+        .div-ul8-dian h5{
+            width: 185px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 108px;
+        }
+        .ul7>li:hover{
+            color:rgb(0,190,6) ;
+        }
+        .ul7-dian>li:hover{
+            color:rgb(0,190,6) ;
+        }
+        .ul9>li:hover{
+            color:rgb(0,190,6) ;
+        }
+        .ul9-dian>li:hover{
+            color:rgb(0,190,6) ;
+        }
+        html,.ul5>li:nth-of-type(2), .ul5>li:nth-of-type(2) div, .ul5>li:nth-of-type(2) p, .ul5>li:nth-of-type(2) img, .ul5>li:nth-of-type(2) a {
+            margin: 0 auto;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        .ul5>li:nth-of-type(2){
+            padding: 0px 20px;
+            box-sizing: border-box;
+            font-family: "微软雅黑";
+            font-size: 14px;
+            background-color: #252525;
+        }
+        .img_100 img {
+            width: 100%;
+            max-width: 100%;
+        }
+        .margin_bottom_15 {
+            margin-bottom: 15px;
+        }
+        .text_center {
+            text-align: center;
+        }
+        .drag_div {
+            margin-top: 30px;
+            width: 1300px;
+            height: 760px;
+            overflow: hidden;
+            position: relative;
+        }
+        .drag_div>div {
+            background: #fff;
+            padding: 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .drag_div>div.one {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 240px;
+        }
+        .drag_div>div.two {
+            position: absolute;
+            top: 260px;
+            left: 0;
+            width: 20%;
+            height: 240px;
+        }
+        .drag_div>div.three {
+            position: absolute;
+            top: 520px;
+            left: 0;
+            width: 20%;
+            height: 240px;
+        }
+        .drag_div>div.four {
+            position: absolute;
+            top: 0px;
+            left: 21%;
+            width: 37%;
+            height: 760px;
+        }
+        .drag_div>div.five {
+            position: absolute;
+            top: 0px;
+            left: 59%;
+            width: 20%;
+            height: 280px;
+        }
+        .drag_div>div.six {
+            position: absolute;
+            top: 300px;
+            left: 59%;
+            width: 20%;
+            height: 220px;
+        }
+        .drag_div>div.seven {
+            position: absolute;
+            top: 540px;
+            left: 59%;
+            width: 20%;
+            height: 220px;
+        }
+        .drag_div>div.eight {
+            position: absolute;
+            top: 0px;
+            left: 80%;
+            width: 20%;
+            height: 280px;
+        }
+        .drag_div>div.nine {
+            position: absolute;
+            top: 300px;
+            left: 80%;
+            width: 20%;
+            height: 220px;
+        }
+        .drag_div>div.ten {
+            position: absolute;
+            top: 540px;
+            left: 80%;
+            width: 20%;
+            height: 220px;
+        }
+
+
+
+
+        .drag_div>div.ten:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.nine:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.eight:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.seven:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.six:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.five:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.four:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.three:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.two:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+        .drag_div>div.one:hover{
+            transform: scale(1.08);
+            color:rgb(0,190,6) ;
+        }
+
+        .drag_div>div.one img, .drag_div>div.two img, .drag_div>div.three img {
+            width: 100%;
+            height: 180px;
+        }
+        .drag_div>div.four img {
+            width: 100%;
+            height: 700px;
+        }
+        .drag_div>div.five img, .drag_div>div.eight img {
+            width: 100%;
+            height: 220px;
+        }
+        .drag_div>div.six img, .drag_div>div.seven img, .drag_div>div.nine img, .drag_div>div.ten img {
+            width: 100%;
+            height: 160px;
+        }
+
+
+
+
+
+
+        .ulq>li{
+            display:inline-block;
+            animation: oneo 3s;
+        }
+        .ulq1>li{
+            display:inline-block;
+
+        }
+        .ulq>li{
+            display:inline-block;
+
+        }
+        .ulq1>li:hover{
+
+            color: green;
+        }
+        .ulq>li:hover{
+
+            color: green;
+        }
+
+        @keyframes oneo {
+            0%{transform:scale(1);
+            }
+            25%{transform: translate(2px);
+
+            }
+            35%{
+                transform: translate(-2px);
+            }
+            50%{transform:scale(1.04);
+
+            }
+            75%{transform:scale(1.06);
+
+            }
+            100%{transform:scale(1.08);
+            }
+        }
+
+        @keyframes oneo1 {
+
+        }
+    </style>
+
+
+</head>
+<body onload="setInterval('lunbo()',6000)">
+<script type="text/javascript" src="../js1/move.js"></script>
+<script type="text/javascript" src="../js1/tuozhuai.js"></script>
+<nav class="menu-activea">
+    <h1 ></h1>
+    <ul>
+        <li><b>精选</b><a >></a></li>
+        <li><b>综艺</b><a>></a></li>
+        <li><b>动漫精选</b><a >></a></li>
+        <li><b>电视剧</b><a>></a></li>
+        <li><b>电影</b><a>></a></li>
+        <li><b>底部</b><a>></a></li>
+
+    </ul>
+</nav>
+<main>
+
+    <div class="div1"onmouseover="show()" onmouseout="close1()">
+        <input class="input1"  type="text" value="我想和你唱" />
+        <ul class="ul2">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+        <ul class="ul3">
+            <li>无问西东全明星阵容</li>
+            <li>小鲜肉迷死小迷妹</li>
+            <li>重回上学时光</li>
+            <li>教你怎么学会养生</li>
+            <li>你最好的初恋样子</li>
+            <li>是否有一个这样的女孩</li>
+            <li>热血铁汉精神火爆上映</li>
+            <li>21克拉的灵魂</li>
+        </ul>
+        <div class="arrowLeft"onclick="lunboji()"><</div><div class="arrowRight"onclick="lunbo()">></div>
+    </div>
+
+
+    <ul class="ul4">
+
+    <h5>历史记录</h5>
+        <li>青春修炼手册</li>
+        <li>我想和你唱</li>
+        <li>极限挑战</li>
+        <li>爱情公寓</li>
+    </ul>
+
+
+   <div class="div2">
+       <ul class="ul5">
+
+           <li>
+
+
+              <h3 id="h1">精选</h3>
+                 <ul class="ul6">
+                     <li><img src="../精选/二十二.png" /></li>
+                     <li><img src="../精选/侏罗纪世界2.png" /></li>
+                     <li><img src="../精选/宝塔镇河妖.png" /></li>
+                     <li><img src="../精选/无问西东.png" /></li>
+                     <li><img src="../精选/十八洞村.png" /></li>
+                 </ul>
+
+               <div class="div-ul6">
+                 <img src="../精选/欲望之城-1.png"width="229px"height="130px">
+                  <h5>低压槽：欲望之城</h5>
+                  <p>
+                     <h6>标签：华语&nbsp;枪战&nbsp;悬疑<br>主演：张家辉/何炅/徐珺楠<br>
+                   孤城一座堕落而又繁华的城市<br>
+                   这里冲车着金钱的栖息，然而在。。<br>
+               </h6>
+                   <h6>
+
+                   </h6>
+
+                  </p>
+
+
+               </div>
+
+
+
+
+
+               <ul class="ul7">
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>二十二&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>侏罗纪世界2&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>宝塔镇河妖&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>无问西东&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>宝塔镇河妖&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   <div class="div3">
+                       <ul>
+                           <li>二十二</li>
+                           <li>侏罗纪世界2</li>
+                           <li>宝塔镇河妖</li>
+                           <li>无问西东</li>
+                           <li>欲望之城</li>
+                           <li>江湖类型</li>
+                           <li>沈梦辰</li>
+                           <li>消灭</li>
+                           <li>陈翔六点半之铁头无敌</li>
+                           <li>缝纫机乐队</li>
+                       </ul>
+                      <img id="im1" src="../精选/箭头.png">
+                   </div>
+               </ul>
+               <ul class="ul8">
+                   <li><img src="../精选/欲望之城.png" /></li>
+                   <li><img src="../精选/江湖类型.png" /></li>
+                   <li><img src="../精选/沈梦辰.png" /></li>
+                   <li><img src="../精选/消灭.png" /></li>
+                   <li> <img src="../精选/缝纫机乐队.png" /></li>
+                   <li><img src="../精选/陈翔六点半之铁头无敌.png" /></li>
+
+               </ul>
+               <div class="div-ul8">
+                   <img src="../精选/欲望之城-1.png"width="229px"height="130px">
+                   <h5>低压槽：欲望之城</h5>
+                   <p>
+                   <h6>标签：华语&nbsp;枪战&nbsp;悬疑<br>主演：张家辉/何炅/徐珺楠<br>
+                       孤城一座堕落而又繁华的城市<br>
+                       这里冲车着金钱的栖息，然而在。。<br>
+                   </h6>
+                   <h6>
+
+                   </h6>
+
+                   </p>
+
+
+               </div>
+               <ul class="ul9">
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>欲望之城&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>江湖有道&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>识色空也&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>消失&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>缝纫机乐队&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>陈翔六点半之<br>铁头无敌</li>
+               </ul>
+           </li>
+
+           <li>
+               <h3 id="h2">综艺</h3>
+
+               <div class="drag_div" id="drag_div">
+                   <div class="one">
+                       <p class="img_100 margin_bottom_15"><img src="../images/4.jpg"></p>
+                       <p class="text_center">极限挑战</p>
+                   </div>
+                   <div class="two">
+                       <p class="img_100 margin_bottom_15"><img src="../images/2.jpg"></p>
+                       <p class="text_center">我想和你唱</p>
+                   </div>
+                   <div class="three">
+                       <p class="img_100 margin_bottom_15"><img src="../images/3.jpg"></p>
+                       <p class="text_center">奔跑吧，兄弟</p>
+                   </div>
+                   <div class="four">
+                       <p class="img_100 margin_bottom_15"><img src="../images/1.jpg"></p>
+                       <p class="text_center">创造101</p>
+                   </div>
+                   <div class="five">
+                       <p class="img_100 margin_bottom_15"><img src="../images/5.jpg"></p>
+                       <p class="text_center">蒙面唱将猜猜</p>
+                   </div>
+                   <div class="six">
+                       <p class="img_100 margin_bottom_15"><img src="../images/6.jpg"></p>
+                       <p class="text_center">我是歌手</p>
+                   </div>
+                   <div class="seven">
+                       <p class="img_100 margin_bottom_15"><img src="../images/7.jpg"></p>
+                       <p class="text_center">无限歌谣季</p>
+                   </div>
+                   <div class="eight">
+                       <p class="img_100 margin_bottom_15"><img src="../images/8.jpg"></p>
+                       <p class="text_center">火星情报局</p>
+                   </div>
+                   <div class="nine">
+                       <p class="img_100 margin_bottom_15"><img src="../images/9.jpg"></p>
+                       <p class="text_center">拜托了冰箱</p>
+                   </div>
+                   <div class="ten">
+                       <p class="img_100 margin_bottom_15"><img src="../images/10.jpg"></p>
+                       <p class="text_center">明日之子</p>
+                   </div>
+               </div>
+               <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff">
+               </div>
+
+           </li>
+
+
+           <li>
+               <h3 id="h3">动漫精选</h3>
+               <ul class="ulq">
+               <li><img width="165px" height="235px"  src="../动漫精选/三国演义.png" /></li>
+               <li><img width="165px" height="235px"  src="../动漫精选/侠客.png" /></li>
+               <li><img width="165px" height="235px"  src="../动漫精选/全职高手.png" /></li>
+               <li><img width="165px" height="235px"  src="../动漫精选/墓王之王选官司.png" /></li>
+               <li><img width="165px" height="235px"  src="../动漫精选/实验品家庭.png" /></li>
+               <li><img width="165px" height="235px"  src="../动漫精选/帝王攻掠.png" /></li>
+               <li><img width="165px" height="235px"  src="../动漫精选/摩卡受女婴.png" /></li>
+           </ul>
+               <ul class="ulq1">
+                   <li>三国演义</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>侠客</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>全职高手</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>墓王之王选官司</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>实验品家庭</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>帝王攻掠</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>摩卡受女婴</li>
+               </ul>
+
+               <ul class="ulq">
+                   <li><img width="165px" height="235px"  src= "../动漫精选/斗破苍芎.png" /></li>
+                   <li><img width="165px" height="235px"  src="../动漫精选/斗罗大陆.png" /></li>
+                   <li><img width="165px" height="235px"  src="../动漫精选/末日觉醒.png" /></li>
+                   <li><img width="165px" height="235px"  src="../动漫精选/枪神纪.png" /></li>
+                   <li><img width="165px" height="235px"  src="../动漫精选/欧布奥特曼英雄传.png" /></li>
+                   <li><img width="165px" height="235px"  src="../动漫精选/武王传.png" /></li>
+                   <li><img width="165px" height="235px"  src="../动漫精选/爱神巧克力.png" /></li>
+               </ul>
+               <ul class="ulq1">
+                   <li>斗破苍芎</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>斗罗大陆</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>末日觉醒</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>枪神纪</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>欧布奥特曼英雄传</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>武王传</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>爱神巧克力</li>
+               </ul>
+
+           </li>
+
+
+
+
+
+
+
+           <li>
+               <h3 id="h4">电视剧</h3>
+               <ul class="ul6-dian">
+                   <li><img src="../电视剧/亲爱的活祖宗.png" /></li>
+                   <li><img src="../电视剧/像我们一样年轻.png" /></li>
+                   <li><img src="../电视剧/同学两亿岁.png" /></li>
+                   <li><img src="../电视剧/如果，爱.png" /></li>
+                   <li><img src="../电视剧/学门大师.png" /></li>
+                   <li><img src="../电视剧/为你奉献了整个夏日.png" /></li>
+               </ul>
+
+               <div class="div-ul6-dian">
+                   <img src="../精选/欲望之城-1.png"width="185px"height="130px">
+                   <h5>低压槽：欲望之城</h5>
+                   <p>
+                   <h6>标签：华语&nbsp;枪战&nbsp;悬疑<br>主演：张家辉/何炅/徐珺楠<br>
+                       孤城一座堕落而又繁华的城市<br>
+                       这里冲车着金钱的栖息，然而在。。<br>
+                   </h6>
+                   <h6>
+
+                   </h6>
+
+                   </p>
+
+
+               </div>
+
+
+
+
+
+               <ul class="ul7-dian">
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>亲爱的火祖宗&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>像我们一样年轻&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>同学两亿岁&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>如果，爱&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>学门大师&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+
+                   &nbsp;
+                   <li>为了你我愿意&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   <div class="div3-dianshiju">
+                       <ul>
+                           <li>如果，爱</li>
+                           <li>向我们一样年轻</li>
+                           <li>同学两亿岁</li>
+                           <li>亲爱的活祖宗</li>
+                           <li>学门大师</li>
+                           <li>家有儿女初长成</li>
+                           <li>拐跑灵犀</li>
+                           <li>泡沫之夏</li>
+                           <li>爱国者</li>
+                           <li>钟馗捉妖记</li>
+                       </ul>
+                       <img id="im1-dian" src="../精选/箭头.png">
+                   </div>
+               </ul>
+
+
+               <ul class="ul8-dian">
+                   <li><img src="../电视剧/钟馗捉妖记.png" /></li>
+                   <li><img src="../电视剧/走火.png" /></li>
+                   <li><img src="../电视剧/爱国者.png" /></li>
+                   <li><img src="../电视剧/热血狂篮.png" /></li>
+                   <li> <img src="../电视剧/泡沫之夏.png" /></li>
+                   <li><img src="../电视剧/家有儿女初长成.png" /></li>
+                   <li><img width="200px"height="225"  src="../电视剧/佟丽娅.png" /></li>
+               </ul>
+               <div class="div-ul8-dian">
+                   <img src="../精选/欲望之城-1.png"width="185px"height="130px">
+                   <h5>低压槽：欲望之城</h5>
+                   <p>
+                   <h6>标签：华语&nbsp;枪战&nbsp;悬疑<br>主演：张家辉/何炅/徐珺楠<br>
+                       孤城一座堕落而又繁华的城市<br>
+                       这里冲车着金钱的栖息，然而在。。<br>
+                   </h6>
+                   <h6>
+
+                   </h6>
+
+                   </p>
+
+
+               </div>
+               <ul class="ul9-dian">
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>钟馗捉妖记&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>走火&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>爱国者&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>热血狂篮&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>泡沫之夏&nbsp;&nbsp;<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>家有儿女初长成<br>&nbsp;&nbsp;</li>
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   <li>身居亮相佟丽娅<br>&nbsp;&nbsp;</li>
+               </ul>
+           </li>
+
+
+
+
+           <li class="li1">
+               <h3 id="h5">电影</h3>
+               <div class="wrapper">
+                   <div class="js-video">
+                       <video class="js-media" poster="vedio/sintel.jpg"src="../vedio/Lost%20Frequencies%20-%20Reality.mp4"width="1043px"height="500px">
+                       </video>
+                       <i data-playPause class="playPause fa fa-play ui-icon"><span></span></i>
+                       <div class="ui">
+                           <div>
+                               <div data-progress class="progress">
+                                   <div data-buffer class="progress-buffer"></div>
+                                   <div data-time class="progress-time"></div>
+                               </div>
+                           </div>
+                           <div>
+                               <span class="timeDisplay"><i data-currentTime>0:00</i> / <i data-duration>0:00</i></span>
+                           </div>
+                           <div>
+                               <i data-mute class="fa fa-volume-up ui-icon"></i>
+                           </div>
+                           <div>
+                               <div data-volume="100" class="volumeControl"><span class="ui-slider-handle"></span></div>
+                           </div>
+                       </div>
+                       <i data-fullscreen class="fullscreen iconicfill-fullscreen" title="fullscreen"></i>
+                   </div>
+
+                   <dl class="dl1">
+                       <dt>播放列表</dt>
+                       <dd  class="ddd"><img src="../vedio/reality.png"width="72px"height="59px" >reality</dd>
+                       <dd><img src="../vedio/number2.jpg"width="72px"height="59px" >无问西东</dd>
+                       <dd><img src="../vedio/number7.jpg"width="72px"height="59px" >偶像练习生</dd>
+                       <dd><img src="../vedio/number4.jpg"width="72px"height="59px" >一起上学啦</dd>
+                       <dd><img src="../vedio/number5.jpg"width="72px"height="59px" >拜托了冰箱</dd>
+                       <dd><img src="../vedio/number6.jpg"width="72px"height="59px" >最好的我们</dd>
+                   </dl>
+
+               </div>
+
+               <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+               <script src="js/vedio.js"></script>
+               <script src="js/vedio2.js"></script>
+           </li>
+
+
+           <li>
+               <h3 id="h6">底部</h3>
+
+
+
+
+
+           </li>
+       </ul>
+
+
+
+
+   </div>
+
+</main>
+
+
+
+
+
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/myScroll.js"></script>
+<script type="text/javascript">
+    var  i=1;
+
+    (function() {
+        $(".ul3 li:eq(0)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li:eq(1)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li:eq(2)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li:eq(3)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li:eq(4)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li:eq(5)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li:eq(6)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li:eq(7)").mouseover(function(){
+            $(this).css("color","orange");
+        }).mouseout(function(){
+            $(this).css("color","white");
+        })
+        $(".ul3 li").mouseover(function(){
+            i=$(this).index();
+           lunbo58();
+
+        })
+        var nav = $('nav'),
+            menu = $('nav h1'),
+            main = $('main'),
+            nav1 = $('nav'),
+            open = false,
+            hover = false;
+
+        menu.on('doubleclick', function() {
+            open = !open ? true : false;
+            nav.toggleClass('menu-active');
+            main.toggleClass('menu-active');
+            nav.removeClass('menu-hover');
+            main.removeClass('menu-hover');
+            console.log(open);
+        });
+        nav1.on('click', function() {
+            open = !open ? true : false;
+            nav.toggleClass('menu-active');
+            main.toggleClass('menu-active');
+            nav.removeClass('menu-hover');
+            main.removeClass('menu-hover');
+            console.log(open);
+        });
+        menu.hover(
+            function() {
+                if (!open) {
+                    nav.addClass('menu-hover');
+                    main.addClass('menu-hover');
+                }
+            }, function() {
+                nav.removeClass('menu-hover');
+                main.removeClass('menu-hover');
+            }
+
+        );
+
+    })();//首页框架
+
+   function lunbo(){
+
+       if(i<8){
+           i++;
+       }else{
+           i=1;
+       }
+
+       $(".div1").css({"background":"url(../轮播图/number"+i+".jpg)  no-repeat"});
+       $(".ul2 li:nth-of-type("+i+")").siblings().css("background","#333333");
+       $(".ul2  li:nth-of-type("+i+")").css("background","orange");
+       $(".ul3 li:nth-of-type("+i+")").siblings().css("color","white");
+       $(".ul3  li:nth-of-type("+i+")").css("color"," orange");
+
+       var txt= new Array(8);
+       txt[0]="无限歌谣季";
+       txt[1]="无问西东";
+       txt[2]="偶像练习生";
+       txt[3]="一起上学啦";
+       txt[4]="拜托了冰箱";
+       txt[5]="最好的我们";
+       txt[6]="同桌的你";
+       txt[7]="战狼3";
+       txt[8]="21克拉";
+       $(".input1").val(txt[i]);
+   }
+    function lunbo58(){
+
+        if(i<8){
+            i++;
+        }else{s
+            i=1;
+        }
+
+        $(".div1").css({"background":"url(../轮播图/number"+i+".jpg)  no-repeat"});
+        $(".ul2 li:nth-of-type("+i+")").siblings().css("background","#333333");
+        $(".ul2  li:nth-of-type("+i+")").css("background","orange");
+
+
+        var txt= new Array(8);
+        txt[0]="无限歌谣季";
+        txt[1]="无问西东";
+        txt[2]="偶像练习生";
+        txt[3]="一起上学啦";
+        txt[4]="拜托了冰箱";
+        txt[5]="最好的我们";
+        txt[6]="同桌的你";
+        txt[7]="战狼3";
+        txt[8]="21克拉";
+        $(".input1").val(txt[i]);
+    }
+    function lunboji(){
+
+        if(i>0){
+            i=i-1;
+        }else{
+            i=8;
+        }
+
+        $(".div1").css({"background":"url(../轮播图/number"+i+".jpg)  no-repeat"});
+        $(".ul2 li:nth-of-type("+i+")").siblings().css("background","#333333");
+        $(".ul2  li:nth-of-type("+i+")").css("background","orange");
+        $(".ul3 li:nth-of-type("+i+")").siblings().css("color","white");
+        $(".ul3  li:nth-of-type("+i+")").css("color","orange");
+        var txt= new Array(8);
+        txt[0]="无限歌谣季";
+        txt[1]="创造101";
+        txt[2]="偶像练习生";
+        txt[3]="一起上学啦";
+        txt[4]="拜托了冰箱";
+        txt[5]="最好的我们";
+        txt[6]="同桌的你";
+        txt[7]="战狼3";
+        txt[8]="21克拉";
+        $(".input1").val(txt[i]);
+
+    }
+
+    function show(){
+        document.getElementsByClassName("arrowLeft")[0].style.display="block";
+        document.getElementsByClassName("arrowRight")[0].style.display="block";
+
+    }
+    function close1(){
+        document.getElementsByClassName("arrowLeft")[0].style.display="none";
+        document.getElementsByClassName("arrowRight")[0].style.display="none";
+
+    }
+
+
+
+$(document).ready(function() {
+    $(".input1").focus(function () {
+        $(".ul4").css("display", "block").fadeIn(1200);
+
+        $(this).val("");
+    })
+    $(".ul4 li").click(function () {
+        var ji = $(this).text();
+
+        $(".input1").val(ji);
+    }).click(function () {
+        $(".ul4").css("display", "none");
+    })
+    $(".ul4 li").mouseover(function () {
+        $(this).css("background-color", "green");
+
+    }).mouseout(function () {
+        $(this).css("background-color", "rgb(162,155,132)");
+    })
+//////////////////////////////////////////////////////////////////////////////////////////////////
+    // 点击ol的li，屏幕滑动到对应的ul的li
+    // 利用window.scrollTo()；缓动动画实现
+    var ul = document.getElementsByClassName("ul5")[0];
+
+    var ol = document.getElementsByClassName("menu-activea")[0].getElementsByTagName("ul")[0];
+    //var ol=document.getElementsByClassName("ul2")[0];
+    var ulLiArr = ul.children;
+    var olLiArr = ol.children;
+    var target = 0;
+    var leader = 0;
+    var timer = null;
+
+
+    // 1. 指定ul和ol中li的背景色，对应li的背景色相同
+    var arrColor = ["green", "orange", "yellow", "red", "gold"];
+    // 利用for循环给两个数组中的元素上色
+    for (var i = 0; i < arrColor.length; i++) {
+        //ulLiArr[i].style.backgroundColor = arrColor[i];
+        //olLiArr[i].style.backgroundColor = arrColor[i];
+
+        // 属性绑定索引值
+        olLiArr[i].index = i;
+        // 循环绑定，为每一个li绑定点击事件
+        olLiArr[i].onclick = function () {
+            // 获取目标位置
+            target = ulLiArr[this.index].offsetTop + 470;
+            clearInterval(timer);
+            // 利用缓动动画原理实现屏幕滑动
+            timer = setInterval(function () {
+                // (1).获取步长
+                var step = (target - leader) / 10;
+                // (2).二次处理步长
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                // (3).屏幕滑动
+                juli = 100;
+                leader = leader + step;
+                window.scrollTo(0, leader);
+                // (4).清除定时器
+                if (Math.abs(target - leader) <= Math.abs(step)) {
+                    window.scrollTo(0, target);
+                    clearInterval(timer);
+                }
+            }, 25);
+        }
+        // 用scroll事件模拟盒子距离最顶端的距离
+        window.onscroll = function () {
+            // 每次屏幕滑动，把屏幕卷去的值赋给leader，模拟获取显示区域距离顶部的距离
+            leader = scroll().top;
+        }
+    }
+    //$(".sou1").setAttribute("src", "../vedio/sintel.mp4")
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+        $(".ul6>li:nth-of-type(1)").mouseover(function(){
+            $(".div-ul6 img").attr("src","../精选-div/二十二.png");
+            $(".div-ul6  h5").text("二十二");
+            $(".div-ul6").css("left","73px");
+          $(".div-ul6").css("display","block");
+        });
+
+
+    $(".ul6>li:nth-of-type(2)").mouseover(function(){
+        $(".div-ul6 img").attr("src","../精选-div/护士日记.png");
+        $(".div-ul6  h5").text("侏罗纪世界");
+        $(".div-ul6").css("left","287px");
+        $(".div-ul6").css("display","block");
+
+    })
+    $(".ul6>li:nth-of-type(3)").mouseover(function(){
+        $(".div-ul6 img").attr("src","../精选-div/宝塔镇河妖.png");
+        $(".div-ul6  h5").text("宝塔镇河妖");
+        $(".div-ul6").css("left","506px");
+        $(".div-ul6").css("display","block");
+    })
+    $(".ul6>li:nth-of-type(4)").mouseover(function(){
+        $(".div-ul6 img").attr("src","../精选/无问西东.png");
+        $(".div-ul6  h5").text("无问西东");
+        $(".div-ul6").css("left","723px");
+        $(".div-ul6").css("display","block");
+    })
+    $(".ul6>li:nth-of-type(5)").mouseover(function(){
+        $(".div-ul6 img").attr("src","../精选-div/十八童真.png");
+        $(".div-ul6  h5").text("十八洞镇");
+        $(".div-ul6").css("left","939px");
+        $(".div-ul6").css("display","block");
+    })
+
+
+
+
+
+
+    $(".ul8>li:nth-of-type(1)").mouseover(function(){
+        $(".div-ul8 img").attr("src","../精选-div/十八童真.png");
+        $(".div-ul8  h5").text("欲望之城");
+        $(".div-ul8").css("left","73px");
+        $(".div-ul8").css("display","block");
+    });
+
+
+    $(".ul8>li:nth-of-type(2)").mouseover(function(){
+        $(".div-ul8 img").attr("src","../精选-div/江湖有道.png");
+        $(".div-ul8  h5").text("江湖有道");
+        $(".div-ul8").css("left","287px");
+        $(".div-ul8").css("display","block");
+
+    })
+    $(".ul8>li:nth-of-type(3)").mouseover(function(){
+        $(".div-ul8 img").attr("src","../精选-div/古墓丽影.png");
+        $(".div-ul8  h5").text("识色空也");
+        $(".div-ul8").css("left","506px");
+        $(".div-ul8").css("display","block");
+    })
+    $(".ul8>:nth-of-type(4)").mouseover(function(){
+        $(".div-ul8 img").attr("src","../精选-div/二代妖精之三生有幸.png");
+        $(".div-ul8  h5").text("消失");
+        $(".div-ul8").css("left","723px");
+        $(".div-ul8").css("display","block");
+    })
+    $(".ul8>:nth-of-type(5)").mouseover(function(){
+        $(".div-ul8 img").attr("src","../精选-div/缝纫机乐队.png");
+        $(".div-ul8  h5").text("缝纫机乐队");
+        $(".div-ul8").css("left","939px");
+        $(".div-ul8").css("display","block");
+    })
+    $(".ul8>:nth-of-type(6)").mouseover(function(){
+        $(".div-ul8 img").attr("src","../精选-div/陈翔六点半.png");
+        $(".div-ul8  h5").text("陈翔六点半之铁头无敌");
+        $(".div-ul8").css("left","1155px");
+        $(".div-ul8").css("display","block");
+    })
+
+    $(".div-ul6").mouseout(function(){
+        $(".div-ul6").css("display","none");
+    })
+    $(".div-ul8").mouseout(function(){
+        $(".div-ul8").css("display","none");
+    })
+///////////////////////////////////////
+
+
+
+
+    $(".ul6-dian>li:nth-of-type(1)").mouseover(function(){
+        $(".div-ul6-dian img").attr("src","../电视剧-div/亲爱的活祖宗.png");
+        $(".div-ul6-dian h5").text("亲爱的活祖宗");
+        $(".div-ul6-dian").css("left","70px");
+        $(".div-ul6-dian").css("display","block");
+    });
+
+
+    $(".ul6-dian>li:nth-of-type(2)").mouseover(function(){
+        $(".div-ul6-dian img").attr("src","../电视剧-div/向我们一样年轻.png");
+        $(".div-ul6-dian h5").text("像我们一样年轻");
+        $(".div-ul6-dian").css("left","250px");
+        $(".div-ul6-dian").css("display","block");
+
+    })
+    $(".ul6-dian>li:nth-of-type(3)").mouseover(function(){
+        $(".div-ul6-dian img").attr("src","../电视剧-div/同学两亿年.png");
+        $(".div-ul6-dian h5").text("同学两亿年");
+        $(".div-ul6-dian").css("left","423px");
+        $(".div-ul6-dian").css("display","block");
+    })
+    $(".ul6-dian>li:nth-of-type(4)").mouseover(function(){
+        $(".div-ul6-dian img").attr("src","../电视剧-div/如果爱.png");
+        $(".div-ul6-dian h5").text("如果爱");
+        $(".div-ul6-dian").css("left","598px");
+        $(".div-ul6-dian").css("display","block");
+    })
+    $(".ul6-dian>li:nth-of-type(5)").mouseover(function(){
+        $(".div-ul6-dian img").attr("src","../电视剧-div/学门大师.png");
+        $(".div-ul6-dian h5").text("学门大师");
+        $(".div-ul6-dian").css("left","772px");
+        $(".div-ul6-dian").css("display","block");
+    })
+    $(".ul6-dian>li:nth-of-type(6)").mouseover(function(){
+        $(".div-ul6-dian img").attr("src","../电视剧-div/为了你我愿意热爱整个世界.png");
+        $(".div-ul6-dian h5").text("为了你我愿意热爱整个世界");
+        $(".div-ul6-dian").css("left","950px");
+        $(".div-ul6-dian").css("display","block");
+    })
+
+
+
+
+
+    $(".ul8-dian>li:nth-of-type(1)").mouseover(function(){
+        $(".div-ul8-dian img").attr("src","../电视剧-div/钟馗捉妖记.png");
+        $(".div-ul8-dian h5").text("钟馗捉妖记");
+        $(".div-ul8-dian").css("left","70px");
+        $(".div-ul8-dian").css("display","block");
+    });
+
+
+    $(".ul8-dian>li:nth-of-type(2)").mouseover(function(){
+        $(".div-ul8-dian img").attr("src","../电视剧-div/走火.png");
+        $(".div-ul8-dian h5").text("走火");
+        $(".div-ul8-dian").css("left","250px");
+        $(".div-ul8-dian").css("display","block");
+
+    })
+    $(".ul8-dian>li:nth-of-type(3)").mouseover(function(){
+        $(".div-ul8-dian img").attr("src","../电视剧-div/爱国者.png");
+        $(".div-ul8-dian h5").text("爱国者");
+        $(".div-ul8-dian").css("left","423px");
+        $(".div-ul8-dian").css("display","block");
+    })
+    $(".ul8-dian>li:nth-of-type(4)").mouseover(function(){
+        $(".div-ul8-dian img").attr("src","../电视剧-div/热血狂篮.png");
+        $(".div-ul8-dian h5").text("热血狂篮");
+        $(".div-ul8-dian").css("left","598px");
+        $(".div-ul8-dian").css("display","block");
+    })
+    $(".ul8-dian>li:nth-of-type(5)").mouseover(function(){
+        $(".div-ul8-dian img").attr("src","../电视剧-div/泡沫之夏.png");
+        $(".div-ul8-dian h5").text("泡沫之夏");
+        $(".div-ul8-dian").css("left","772px");
+        $(".div-ul8-dian").css("display","block");
+    })
+    $(".ul8-dian>li:nth-of-type(6)").mouseover(function(){
+        $(".div-ul8-dian img").attr("src","../电视剧-div/家有儿女初长成.png");
+        $(".div-ul8-dian h5").text("家有儿女初长成");
+        $(".div-ul8-dian").css("left","950px");
+        $(".div-ul8-dian").css("display","block");
+    })
+
+    $(".ul8-dian>li:nth-of-type(7)").mouseover(function(){
+        $(this).css("transform","scale(1.1)")
+
+    })
+
+
+
+    $(".div-ul6-dian").mouseout(function(){
+        $(".div-ul6-dian").css("display","none");
+    })
+    $(".div-ul8-dian").mouseout(function(){
+        $(".div-ul8-dian").css("display","none");
+
+    })
+    $(".ul8-dian>li:nth-of-type(7)").mouseout(function(){
+
+        $(this).css("transform","scale(1)")
+    })
+
+    //var jip=setInterval('jii()',1000);
+    $(".ulq>img").mouseover(function(){
+        $(".ulq>li").css("animation", "oneo1");
+
+    })
+    $(".ulq>img").mouseout(function(){
+
+        $(".ulq>li").css("animation", "oneo 2s  infinite ");
+    })
+})
+    function  jii() {
+        //$(".ulq>li").css("animation", "oneo 2s  infinite ");
+        //$(".ulq1>li").css("animation", "oneo s  infinite ");
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
